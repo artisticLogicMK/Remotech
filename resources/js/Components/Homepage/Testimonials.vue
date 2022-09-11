@@ -12,7 +12,9 @@ const testimos = ref([
 const selected = ref(testimos.value[1])
 
 onMounted(() => {
-  AOS.init()
+  AOS.init({
+    once: true,
+  })
 })
 </script>
 

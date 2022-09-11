@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <meta name="description" content="Remotech is a job listing and search platform that aims to give a fast and modern user experience for job employers and job seekers." />
-	    <meta property="og:image" content="" />
+	    <meta property="og:image" content="http://remotech.us-east-1.elasticbeanstalk.com/social.png" />
         <meta name="theme-color" content="#38bdf8">
         <link rel="icon" href="{{asset('ico.png')}}">
 
