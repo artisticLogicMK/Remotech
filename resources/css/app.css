@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import "css/line-awesome.min.css";
+@import "css/animate.min.css";
+
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+*{
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  scroll-behavior: smooth;
+  transition: all 0.25s;
+}
+
+
+*::-webkit-scrollbar{width:6px;background:transparent;}
+*::-webkit-scrollbar-thumb{border-radius:10px;background:rgba(0,0,0,.2)}
+*::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,.28)}
+
+input,textarea,select{
+  @apply border border-gray-200 placeholder:text-gray-400
+}
+input:focus,textarea:focus,select:focus{
+  @apply focus:ring-0 focus:border-sky-400
+}
+
+.tippy-tooltip.custom-theme{
+  @apply bg-gradient-to-br from-sky-400 to-teal-400 text-white invisible md:visible
+}
+.tippy-tooltip.custom-theme .tippy-arrow{
+  @apply border-t-teal-400 border-b-sky-400
+}
+
+/*Water drops*/
+.drop {
+  position: absolute;
+  background: transparent;
+  border-radius: 57% 43% 37% 63% / 51% 53% 47% 49%;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.5),
+    10px 15px 5px rgba(0, 0, 0, 0.1),
+    10px 15px 2px rgba(0, 0, 0, 0.05),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.9);
+}
+
+.drop::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  background: #fff;
+  width: 10px;
+  height: 10px;
+  border-radius: 25% 75% 37% 63% / 40% 43% 57% 60%;
+}
