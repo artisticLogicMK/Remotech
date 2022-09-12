@@ -12,7 +12,7 @@ Remotech is a full job listing and search application that aims to give a fast a
 Made with
 
 ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white)
-![Inertia](https://img.shields.io/badge/inertia-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)
+![Inertia](https://img.shields.io/badge/inertia-%236d74ed.svg?style=for-the-badge&logo=inertia&logoColor=white)
 ![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
