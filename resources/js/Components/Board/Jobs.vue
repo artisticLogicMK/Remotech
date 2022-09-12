@@ -284,7 +284,7 @@ onMounted(() => {
       </div>
 
       <div
-        class="flex items-start sm:items-center rounded-xl border bg-white px-2 sm:px-4 py-3 mb-3 shadow-sm hover:border-sky-300 cursor-pointer overflow-x-hidden"
+        class="flex items-start sm:items-center rounded-xl border bg-white px-2 sm:px-4 py-3 mb-3 shadow-sm hover:border-sky-300 cursor-pointer"
         v-for="job in props.jobs.data"
         :key="job.id"
         @click="viewJob({page: active.label,kw: params.get('kw'), sk: params.get('sk'), bk: params.get('bk'), jb: job.id}, job.id)"
@@ -299,11 +299,11 @@ onMounted(() => {
 
         <div class="flex-1">
           <div class="flex items-center justify-between w-full">
-            <div class="font-bold text-base text-gray-500/80">
+            <div class="font-bold text-sm sm:text-base text-gray-500/80">
               {{job.title}}
             </div>
             <i
-              class="target la la-bookmark text-xl text-gray-400/80 cursor-pointer"
+              class="target la la-bookmark text-base sm:text-xl text-gray-400/80 cursor-pointer"
               @click.stop="bookmark(job.id)"
               :class="{'text-yellow-400': bookmarked.includes(job.id.toString())}"
               data-tippy-content="Bookmark"
@@ -321,25 +321,25 @@ onMounted(() => {
             </div>
 
             <div class="inline-flex items-center bg-gray-100 rounded px-2 py-0 text-gray-500 mr-1" v-if="job.type">
-              <i class="la la-briefcase text-base mr-1"></i>
+              <i class="la la-briefcase text-sm sm:text-base mr-1"></i>
               <span>{{job.type}}</span>
             </div>
 
             <div class="inline-flex items-center bg-gray-100 rounded px-2 py-0 text-gray-500" v-if="job.salary">
-              <i class="la la-money-bill text-base mr-1"></i>
+              <i class="la la-money-bill text-sm sm:text-base mr-1"></i>
               <span>${{job.salary.toLocaleString()+'/'+(job.salary_interval ?? '')}}</span>
             </div>
           </div>
 
           <div>
             <div class="inline-flex items-center text-gray-500/80 text-sm mr-2.5">
-              <i class="la la-clock text-base mr-0.5"></i>
+              <i class="la la-clock text-sm sm:text-base mr-0.5"></i>
               <span>Closes {{time(job.close_date)}}</span>
             </div>
 
-            <div class="inline-flex items-center text-gray-500/80 text-sm" v-if="job.skills.length">
-              <i class="la la-tools text-base mr-0.5"></i>
-              <div class="inline-block">
+            <div class="inline-flex items-start sm:items-center text-gray-500/80 text-sm" v-if="job.skills.length">
+              <i class="la la-tools text-sm sm:text-base mr-0.5"></i>
+              <div class="inline-flex flex-wrap wh-[180px] break-words">
                 <span
                   v-for="skill in job.skills"
                   :key="skill"

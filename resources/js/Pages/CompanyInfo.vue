@@ -85,7 +85,7 @@ const passSubmit = () => {
                 <div class="flex flex-col md:flex-row flex-wrap items-start py-3 sm:py-5 border-b border-gray-200">
                     <div class="mr-3 w-full md:flex-1 mb-1.5">
                         <div class="text-sm font-semibold text-gray-500">Company Logo<span class="text-red-500">*</span></div>
-                        <p class="text-gray-500/80 text-sm">Please select a square size image with a 1:1 aspect ratio as images are cropped to this size before upload.</p>
+                        <p class="text-gray-500/80 text-sm">Square size image with a 1:1 aspect ratio is recommended. Images are cropped to this size before upload.</p>
                     </div>
                     <div class="flex-1 w-full">
                         <p v-if="form.errors.logo" class="text-red-500/90 text-sm mb-0.5">{{form.errors.logo}}</p>
@@ -96,7 +96,7 @@ const passSubmit = () => {
                             <input
                                 type="file"
                                 accept="image/png, image/jpeg, image/webp"
-                                class="grow file:hidden text-gray-500 bg-white border border-gray-200 px-3 py-1.5 text-sm rounded focus:outline-none"
+                                class="grow file:hidde file:w-[0.01px] file:opacity-0 text-gray-500 bg-white border border-gray-200 pr-3 py-1 text-sm rounded focus:outline-none"
                                 :class="{'border-red-300': form.errors.logo}" 
                                 v-wave
                                 @input="form.logo = $event.target.files[0]"
