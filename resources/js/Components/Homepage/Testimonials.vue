@@ -4,17 +4,15 @@ import AOS from 'aos'
 
 //Note: testiminials text copied from the internet
 const testimos = ref([
-  { no: '1', name: 'Mike Epps', company: 'HR Manager, StarTech', msg: 'Great platform for posting jobs and it is very easy to do so. Also have had good luck finding candidates for jobs.' },
-  { no: '2', name: 'MK MilkyWay', company: 'Tech Lead, ArtisticLogic', msg:'Overall, Remotech is super easy to use and user friendly. I love that they were able to offer me specific choices of what I companies that I wanted to work for.' },
-  { no: '3', name: 'Joe Wood', company: 'Support Manager, Facebook', msg: 'This is hands down my favorite job platform available. The ease of use, and the exclusive tools it has to help job applicants are unrivaled.' }
+  { no: '1', name: 'Mike Epps', company: 'HR Manager, StarTech', msg: 'Easy to use and a great platform for posting jobs. Finding job candidates has also been successful.' },
+  { no: '2', name: 'Olu MilkyWay', company: 'Tech Lead, Graphenite Sytems', msg:'Remotech is extremely user-friendly and simple to use overall. I adore that they could provide me precise options for the companies I wanted to work with.' },
+  { no: '3', name: 'Joe Wood', company: 'Support Manager, Facebook', msg: 'My preferred job-search tool is without a doubt this one. Its unparalleled simplicity of use and unique tools for assisting job seekers set them apart.' }
 ])
 
 const selected = ref(testimos.value[1])
 
 onMounted(() => {
-  AOS.init({
-    once: true,
-  })
+  AOS.init({})
 })
 </script>
 

@@ -11,11 +11,18 @@
               <Link :href="route('home')"><i class="la la-wifi"></i>Remotech</Link>
             </div>
             <div class="grow flex items-center justify-center mt-5 md:mt-0">
-              <div>
+              <div v-if="$page.component == 'Auth/Login' || $page.component ==  'Auth/ForgotPassword' || $page.component ==  'Auth/ResetPassword'">
                 <div class="text-white/80 text-base sm:text-lg font-semibold text-center mb-2">
                   Log in to post a job. <br class="md:hidden"/>Job listing made easy!
                 </div>
                 <img src="/images/login.svg" class="w-64 mx-auto">
+              </div>
+
+              <div v-if="$page.component == 'Auth/Register'">
+                <div class="text-white/80 text-base sm:text-lg font-semibold text-center mb-2">
+                  Job listing has never been made easier and faster.
+                </div>
+                <img src="/images/signup.svg" class="w-64 mx-auto">
               </div>
             </div>
           </div>

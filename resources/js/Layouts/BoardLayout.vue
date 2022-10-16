@@ -8,7 +8,7 @@ const params = new URLSearchParams(window.location.search)
 let viewBookmarks = () => {
   Inertia.visit('/board', {
     method: 'get',
-    data: {bk: localStorage.getItem('bookmarks')},
+    data: { bk: localStorage.getItem('bookmarks') },
   })
 }
 
@@ -38,6 +38,8 @@ onMounted(() => {
     </div>
   </Transition>
 
+
+
   <div class="flex w-full h-screen items-stretch">
     
     <div
@@ -61,8 +63,8 @@ onMounted(() => {
           
           <Link
           :href="route('info')"
-            class="flex items-center sm:justify-center lg:justify-start rounded-lg sm:rounded-none lg:rounded-lg p-2 border border-transparent hover:border-black/[.07]"
-            :class="{'bg-black/[.15] shadow-md shadow-black/[.07] hover:border-transparent': $page.component == 'CompanyInfo'}"
+            class="tabs"
+            :class="{'active': $page.component == 'CompanyInfo'}"
             v-if="$page.props.auth.user"
             @click="$store.commit('toggleMenu');$store.commit('toggleInfoPanel', false)"
           >
@@ -75,68 +77,73 @@ onMounted(() => {
             </div>
           </Link>
   
+  
           <!--tabs-->
           <div class="mt-10 md:mt-14 text-white/90">
             <Link
               :href="route('dashboard')"
-              class="flex items-center sm:justify-center lg:justify-start rounded-lg sm:rounded-none lg:rounded-lg border border-transparent hover:border-black/[.07] mb-1 p-2 sm:px-3.5 lg:p-2"
-              :class="{'bg-black/[.15] shadow-md shadow-black/[.07] hover:border-transparent': $page.component == 'Dashboard' && !params.get('bk')}"
+              class="tabs act"
+              :class="{'active': $page.component == 'Dashboard' && !params.get('bk')}"
               @click="$store.commit('toggleMenu');$store.commit('toggleInfoPanel', false)"
             >
-              <i class="la la-home text-2xl lg:text-2xl mr-5 sm:mr-0 lg:mr-5"></i>
-              <span class="font-semibold text-base sm:hidden lg:inline-block">Home</span>
+              <i class="la la-home"></i>
+              <span>Home</span>
             </Link>
   
+
             <Link
               :href="route('listings')"
-              class="flex items-center sm:justify-center lg:justify-start rounded-lg sm:rounded-none lg:rounded-lg border border-transparent hover:border-black/[.07] mb-1 p-2 sm:px-3.5 lg:p-2"
-              :class="{'bg-black/[.15] shadow-md shadow-black/[.07] hover:border-transparent': $page.component == 'Listings' || $page.component == 'Editjob'}"
+              class="tabs act"
+              :class="{'active': $page.component == 'Listings' || $page.component == 'Editjob'}"
               v-if="$page.props.auth.user"
               @click="$store.commit('toggleMenu');$store.commit('toggleInfoPanel', false)"
             >
-              <i class="la la-clipboard text-2xl lg:text-2xl mr-5 sm:mr-0 lg:mr-5"></i>
-              <span class="font-semibold text-base sm:hidden lg:inline-block">Job Listings</span>
+              <i class="la la-clipboard"></i>
+              <span>Job Listings</span>
             </Link>
   
             <Link
               :href="route('createJob')"
-              class="flex items-center sm:justify-center lg:justify-start rounded-lg sm:rounded-none lg:rounded-lg border border-transparent hover:border-black/[.07] mb-1 p-2 sm:px-3.5 lg:p-2"
-              :class="{'bg-black/[.15] shadow-md shadow-black/[.07] hover:border-transparent': $page.component == 'Postjob'}"
+              class="tabs act"
+              :class="{'active': $page.component == 'Postjob'}"
               @click="$store.commit('toggleMenu');$store.commit('toggleInfoPanel', false)"
             >
-              <i class="la la-edit text-2xl lg:text-2xl mr-5 sm:mr-0 lg:mr-5"></i>
-              <span class="font-semibold text-base sm:hidden lg:inline-block">Post a Job</span>
+              <i class="la la-edit"></i>
+              <span>Post a Job</span>
             </Link>
   
+
             <div
-              class="flex items-center sm:justify-center lg:justify-start rounded-lg sm:rounded-none lg:rounded-lg border border-transparent hover:border-black/[.07] mb-1 p-2 sm:px-3.5 lg:p-2 cursor-pointer"
+              class="tabs act"
               @click.stop="$store.commit('toggleMenu');viewBookmarks();$store.commit('toggleInfoPanel', false)"
-              :class="{'bg-black/[.15] shadow-md shadow-black/[.07] hover:border-transparent': params.get('bk')}"
+              :class="{'active': params.get('bk')}"
             >
-              <i class="la la-bookmark text-2xl lg:text-2xl mr-5 sm:mr-0 lg:mr-5"></i>
-              <span class="font-semibold text-base sm:hidden lg:inline-block">Bookmarks</span>
+              <i class="la la-bookmark"></i>
+              <span>Bookmarks</span>
             </div>
           </div>
         </div>
   
+
         <div class="text-white/90">
-          <Link :href="route('logout')"
-            
-            class="flex items-center sm:justify-center lg:justify-start rounded-lg sm:rounded-none lg:rounded-lg border border-transparent hover:border-black/[.07] mb-1 p-2 sm:px-3.5 lg:p-2"
+          <Link
+            :href="route('logout')"
+            class="tabs act"
             v-if="$page.props.auth.user"
             @click="$store.commit('toggleMenu');$store.commit('toggleInfoPanel', false)"
           >
-            <i class="la la-door-open text-2xl lg:text-2xl mr-5 sm:mr-0 lg:mr-5"></i>
-            <span class="font-semibold text-base sm:hidden lg:inline-block">Logout</span>
+            <i class="la la-door-open"></i>
+            <span>Logout</span>
           </Link>
           
-          <Link :href="route('login')"
-            class="flex items-center sm:justify-center lg:justify-start rounded-lg sm:rounded-none lg:rounded-lg border border-transparent hover:border-black/[.07] mb-1 p-2 sm:px-3.5 lg:p-2"
+          <Link
+            :href="route('login')"
+            class="tabs act"
             v-else
             @click="$store.commit('toggleMenu');$store.commit('toggleInfoPanel', false)"
           >
-            <i class="la la-door-open text-2xl lg:text-2xl mr-5 sm:mr-0 lg:mr-5"></i>
-            <span class="font-semibold text-base sm:hidden lg:inline-block">Login</span>
+            <i class="la la-door-open"></i>
+            <span>Login</span>
           </Link>
         </div>
       </div>

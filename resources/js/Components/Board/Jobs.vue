@@ -198,6 +198,7 @@ onMounted(() => {
       </div>
     </div>
 
+
     <!--search-->
     <form @submit.prevent="search.get(route('dashboard'))" id="search">
       <div class="flex flex-wrap">
@@ -213,7 +214,11 @@ onMounted(() => {
           <span type="text" class="italic text-gray-400 text-sm p-0 border-none">Skill</span>
           
           
-          <div class="absolute w-[230px] -right-0 top-full shadow-md rounded-md mt-1" v-if="skillDrop" @mouseleave="skillDrop = !skillDrop">
+          <div
+            class="absolute w-[230px] -right-0 top-full shadow-md rounded-md mt-1 scale-y-0 origin-top"
+            :class="{'scale-y-100': skillDrop}"
+            @mouseleave.stop="skillDrop = false"
+          >
             <div class="flex w-full border border-b-0 rounded-t-md overflow-hidden">
               <input type="text" class="grow border-none py-1 px-2 w-36 text-gray-500 text-sm" v-model="skillinput" placeholder="search or add(one word)"/>
               <div class="bg-sky-400 text-white px-3 py-1 hover:bg-sky-500 cursor-pointer" v-wave @click="addSkill(skillinput)"><i class="la la-plus"></i></div>
@@ -255,14 +260,19 @@ onMounted(() => {
       </div>
 
       <div>
-        <button
-          class="inline-flex items-center bg-white border rounded-full px-2 py-0 mr-1 mt-1"
-          v-for="sk in skills"
-          :key="sk"
+        <TransitionGroup
+          enter-active-class="animate__animated animate__zoomIn animate__faster"
+          leave-active-class="animate__animated animate__zoomOut animate__faster"
         >
-          <span class="text-gray-500 text-xs truncate max-w-[80px]">{{sk}}</span>
-          <i class="la la-times-circle text-lg ml-1 text-sky-400" @click.prevent="removeSkill(sk)"></i>
-        </button>
+          <button
+            class="inline-flex items-center bg-white border rounded-full px-2 py-0 mr-1 mt-1"
+            v-for="sk in skills"
+            :key="sk"
+          >
+            <span class="text-gray-500 text-xs truncate max-w-[80px]">{{sk}}</span>
+            <i class="la la-times-circle text-lg ml-1 text-sky-400" @click.prevent="removeSkill(sk)"></i>
+          </button>
+        </TransitionGroup>
 
         <div class="text-sm text-gray-500 inline cursor-pointer" @click="clearSkills" v-if="search.sk.length">
           Clear
@@ -274,6 +284,10 @@ onMounted(() => {
     <div v-if="$page.props.notfound && notfound" class="notfound w-fit min-w-[200px] mt-2 opacity-90 border border-red-300 bg-red-50 rounded-md p-2 text-sm text-red-500">
       {{$page.props.notfound}}
     </div>
+
+
+
+
 
 
     <!--jobs-->
@@ -357,7 +371,10 @@ onMounted(() => {
 
     </div>
 
-    <div v-else class="mt-10 text-gray-400 text-2xl text-center italic">{{((params.get('kw') ?? false) || (params.has('sk')  ?? false)) ? 'No result found for your search..' : 'No Jobs Here...'}}</div>
+    <div v-else class="mt-10 text-gray-400 text-2xl text-center italic">
+      {{((params.get('kw') ?? false) || (params.has('sk')  ?? false)) ? 'No result found for your search..' : 'No Jobs Here...'}}
+    </div>
+
 
     <!--pagination-->
     <div class="page text-right mb-3" v-if="jobs.total > 9">

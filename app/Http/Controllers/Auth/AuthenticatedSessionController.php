@@ -43,6 +43,15 @@ class AuthenticatedSessionController extends Controller
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
+
+    //destroy session
+    public function destroySession($req) {
+        Auth::guard('web')->logout();
+
+        $req->session()->invalidate();
+
+        $req->session()->regenerateToken();
+    }
     /**
      * Destroy an authenticated session.
      *
@@ -51,15 +60,18 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request)
     {
-        Auth::guard('web')->logout();
-
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
-
+        $this->destroySession($request);
         return redirect('/board');
     }
 
+    public function destroyInHomepage(Request $request)
+    {
+        $this->destroySession($request);
+        return redirect('/');
+    }
+    
+
+    /*
     public function loginGoogle() {
         return Socialite::driver('google')->redirect();
     }
@@ -95,5 +107,6 @@ class AuthenticatedSessionController extends Controller
             dd($e->getMessage());
         }
     }
+    */
     
 }

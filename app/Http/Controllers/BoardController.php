@@ -75,10 +75,14 @@ class BoardController extends Controller
       return Inertia::render('Dashboard', compact('jobs', 'jobview'))->with('searchParams', $params);
     }
 
+
+
     //show company info edit
     public function showInfo() {
       return Inertia::render('CompanyInfo');
     }
+
+
 
     public function updateInfo(Request $req) {
 
@@ -100,6 +104,8 @@ class BoardController extends Controller
         Storage::disk('s3')->put($pathname, $image->__toString()); //upload to s3 bucket
         $info['logo'] = 'https://artistic1.s3.amazonaws.com/'.$pathname; //store path
 
+      } else {
+        $info['logo'] = $req->user()->logo;
       }
 
       if ($req->user()->update($info)) {
@@ -112,6 +118,7 @@ class BoardController extends Controller
       return redirect()->route('info')->with('flash', ['msg' => 'Info Successfully Updated!', 'type' => 'success']);
     }
 
+    
 
     public function passChange(Request $req) {
       

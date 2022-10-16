@@ -18,7 +18,7 @@ onMounted(() => {
       
       <div class="mb-2" data-aos="slide-up">
         <h1 class="text-white/90 font-semibold text-2xl">The Benefits of using Remotech</h1>
-        <p class="text-base text-white">Posting jobs on Remotech is easier and friendlier than any other job board and you have candidates from all around the world to see your postings.</p>
+        <p class="text-base text-white">Remotech makes it easier and friendlier to post jobs than any other job board, and your postings will be seen by candidates from all over the world.</p>
       </div>
       
       <div class="sm:flex items-center justify-center">
@@ -32,10 +32,12 @@ onMounted(() => {
             </div>
             <div>
               <h1 class="font-semibold text-sm sm:text-base leading-none">Wide reach.</h1>
-              <p class="text-sm sm:text-base">Posting your job on Remotech involves you reaching over many countries online. This means you have the benefit of gaining exposure to a huge range of tech enthusiasts seeking job locally or internationally.
+              <p class="text-sm sm:text-base">By posting your job on Remotech, you will be able to reach people from all over the world. This implies you will obtain exposure to a large number of tech enthusiasts looking for work locally or worldwide.
               </p>
             </div>
           </div>
+
+
           <div class="flex text-white/95 mb-4" data-aos="fade-up" data-aos-delay="450">
             <div class="border border-white/95 rounded px-1.5 py-0 inline-block h-fit mr-2 sm:mr-3 text-lg">
               <i class="la la-crosshairs"></i>
@@ -45,13 +47,15 @@ onMounted(() => {
               <p class="text-sm sm:text-base">We have many job postings from tech companies which target seasonal workers, temporary and contract job seekers, high school graduates, and recent college graduates.</p>
             </div>
           </div>
+
+
           <div class="flex text-white/95" data-aos="fade-up" data-aos-delay="650">
             <div class="border border-white/95 rounded px-1.5 py-0 inline-block h-fit mr-2 sm:mr-3 text-lg">
               <i class="la la-map-signs"></i>
             </div>
             <div>
               <h1 class="font-semibold text-sm sm:text-base leading-none">Easy navigation and usage.</h1>
-              <p class="text-sm sm:text-base">We have thoughtfully designed our platform to be friendly and easily accessible, and hassle free for job posters and job seekers.</p>
+              <p class="text-sm sm:text-base">We have painstakingly built our platform to be user-friendly and simple to use for both job posters and job seekers.</p>
             </div>
           </div>
           

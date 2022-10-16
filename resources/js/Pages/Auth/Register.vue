@@ -1,5 +1,5 @@
 <script setup>
-import RegisterLayout from '../../Layouts/RegisterLayout.vue'
+import LoginLayout from '../../Layouts/LoginLayout.vue'
 import { useForm } from '@inertiajs/inertia-vue3'
 
 defineProps({
@@ -26,7 +26,7 @@ const submit = () => {
 <template>
   <Head title="Register" />
   
-  <RegisterLayout>
+  <LoginLayout>
     <div class="flex-1 bg-white xsm:rounded-b-xl md:rounded-none md:rounded-r-xl px-4 sm:px-5 py-3">
       <div class="text-gray-400/80 text-2xl font-semibold mb-3">
         Sign Up
@@ -112,5 +112,5 @@ const submit = () => {
       </form>
     </div>
     
-  </RegisterLayout>
+  </LoginLayout>
 </template>

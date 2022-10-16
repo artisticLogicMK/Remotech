@@ -56,3 +56,17 @@ input:focus,textarea:focus,select:focus{
   height: 10px;
   border-radius: 25% 75% 37% 63% / 40% 43% 57% 60%;
 }
+
+
+.jform { @apply flex flex-col md:flex-row flex-wrap items-start py-3 sm:py-5 border-b border-gray-200 }
+.jform .con { @apply mr-3 w-full md:flex-1 mb-1 }
+.jform .title { @apply text-sm font-semibold text-gray-500 }
+.jform .dscr { @apply text-gray-500/80 text-sm }
+.jform .errors { @apply text-red-500/90 text-sm mb-0.5 }
+.jform .rem { @apply text-right text-sm text-gray-500 }
+
+.tabs { @apply flex items-center sm:justify-center lg:justify-start rounded-lg sm:rounded-none lg:rounded-lg p-2 border border-transparent hover:border-black/[.07] }
+.tabs.act { @apply mb-1 sm:px-3.5 lg:p-2 }
+.tabs.active { @apply bg-black/[.15] shadow-md shadow-black/[.07] hover:border-transparent }
+.tabs span { @apply font-semibold text-base sm:hidden lg:inline-block }
+.tabs i { @apply text-2xl lg:text-2xl mr-5 sm:mr-0 lg:mr-5 }

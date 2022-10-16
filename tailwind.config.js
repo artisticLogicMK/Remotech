@@ -9,9 +9,7 @@ module.exports = {
     ],
 
     theme: {
-      extend: {
-
-      },
+      extend: {},
       screens: {
         'mic': '281px',
         'xsm': '540px',

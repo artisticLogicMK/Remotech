@@ -1,7 +1,7 @@
 <script setup>
 import BoardLayout from '../Layouts/BoardLayout.vue'
 
-import { ref, computed, onMounted } from 'vue'
+import { computed, onMounted } from 'vue'
 import moment from 'moment'
 import { useStore } from 'vuex'
 import { useTippy } from "vue-tippy/composition"
@@ -30,7 +30,7 @@ const compareTime = (time) => {
 
 onMounted(() => {
     if(useStore().state.jobEdited) {
-        Inertia.visit(route('listings'));
+        Inertia.visit(route('listings'))
         useStore().commit('jobEdited', false)
     }
 })
@@ -68,6 +68,7 @@ onMounted(() => {
                             <p class="text-sm" v-if="!compareTime(list.close_time) && (list.close_date ?? false)">Closes on {{time(list.close_date)}}</p>
                             <p class="text-sm" v-if="compareTime(list.close_time)">Closed</p>
                         </div>
+
                         <div class="text-gray-400 text-right w-20 shrink-0 ml-2">
                             <Link :href="route('hideJob', list.id)" method="post">
                                 <div
@@ -79,7 +80,11 @@ onMounted(() => {
                             </Link>
 
                             <Link :href="route('editJob', list.id)">
-                                <div class="target inline-flex justify-center items-center w-8 h-8 border border-gray-300 hover:border-gray-400 shadow-sm rounded-full cursor-pointer ml-2 mt-1" v-wave data-tippy-content="Edit Job">
+                                <div
+                                    class="target inline-flex justify-center items-center w-8 h-8 border border-gray-300 hover:border-gray-400 shadow-sm rounded-full cursor-pointer ml-2 mt-1"
+                                    v-wave
+                                    data-tippy-content="Edit Job"
+                                >
                                     <i class="la la-edit text-xl"></i>
                                 </div>
                             </Link>

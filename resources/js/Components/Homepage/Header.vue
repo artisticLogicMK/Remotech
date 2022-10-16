@@ -13,7 +13,9 @@ const search = useForm({
 })
 
 onMounted(() => {
-  AOS.init()
+  AOS.init({
+    offset: 120
+  })
 })
 </script>
 
@@ -51,13 +53,33 @@ onMounted(() => {
             <i class="la la-wifi"></i>Remotech
           </div>
           
-          <div v-if="$page.props.auth.user" data-aos="fade-left">
-            <Link :href="route('dashboard')">
-              <img v-if="$page.props.auth.user.logo" :src="$page.props.auth.user.logo" class="w-9 rounded-full"/>
+          <div
+          class="relative group"
+            v-if="$page.props.auth.user"
+            data-aos="fade-left"
+          >
+            <div>
+              <img v-if="$page.props.auth.user.logo" :src="$page.props.auth.user.logo" class="w-9 rounded-full hover:border"/>
 
               <div v-else class="inline-flex items-center justify-center rounded-full w-9 h-9 bg-gray-100 text-xl text-gray-400/80 font-semibold capitalize">{{$page.props.auth.user.name.charAt(0)}}</div>
-            </Link>
+            </div>
+
+
+            <div class="absolute top-full right-0 w-52 rounded-md mt-1 bg-white/[.20] backdrop-blur-[10px] scale-y-0 group-hover:scale-y-100 origin-top text-left font-semibold text-sm">
+            <div class="px-3 py-1.5">
+                <span>Email</span>
+                <br/>
+                <span class="font-normal">{{$page.props.auth.user.email}}</span>
+              </div>
+              <Link :href="route('dashboard')" class="border-t border-white/20 flex items-center px-3 py-1.5 cursor-pointer hover:bg-black/5">
+                <i class="la la-chalkboard text-xl mr-3.5"></i> Job Board
+              </Link>
+              <Link :href="route('logoutInHome')" class="border-t border-white/20 flex items-center px-3 py-1.5 cursor-pointer hover:bg-black/5">
+                <i class="la la-door-open text-xl mr-3.5"></i> Logout
+              </Link>
+            </div>
           </div>
+
           
           <div class="text-base mb-3" data-aos="fade-left" v-else>
             <Link v-if="canLogin" :href="route('login')"><button class="rounded border border-white px-3 py-1 font-semibold hover:bg-white/[.20] mr-1.5 sm:mr-3">Login</button></Link>
@@ -73,10 +95,10 @@ onMounted(() => {
             <h1 class="font-bold text-white/[.67] text-4xl md:text-5xl mb-3">Get the tech remote job you dream of.</h1>
             <p class="text-lg md:text-xl text-white/90 mb-3">Remotech offers a platform for finding the best and suitable tech jobs, posted here by tech companies from all around the globe.</p>
             <Link :href="route('dashboard')">
-              <button class="rounded border border-white/60 text-white font-bold text-base opacity-[.85] px-3 py-1.5 hover:bg-white/25 active:bg-transparent mr-2">Find Job</button>
+              <button class="rounded border border-white/60 text-white font-bold text-base opacity-[.85] px-3 py-1 hover:bg-white/25 active:bg-transparent mr-2">Find Job</button>
             </Link>
             <Link :href="route('createJob')">
-              <button class="rounded border border-white/60 text-white font-bold text-base opacity-[.85] px-3 py-1.5 hover:bg-white/25 active:bg-transparent">Post a Job</button>
+              <button class="rounded border border-white/60 text-white font-bold text-base opacity-[.85] px-3 py-1 hover:bg-white/25 active:bg-transparent">Post a Job</button>
             </Link>
           </div>
           

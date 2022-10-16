@@ -62,13 +62,13 @@ const passSubmit = () => {
                 </div>
 
 
-                <div class="flex flex-col md:flex-row flex-wrap items-start py-3 sm:py-5 border-b border-gray-200">
-                    <div class="mr-3 w-full md:flex-1 mb-1.5">
-                        <div class="text-sm font-semibold text-gray-500">Company Name<span class="text-red-500">*</span></div>
-                        <p class="text-gray-500/80 text-sm">Always stick to one name when posting jobs.</p>
+                <div class="jform">
+                    <div class="con">
+                        <div class="title">Company Name<span class="text-red-500">*</span></div>
+                        <p class="dscr">Always stick to one name when posting jobs.</p>
                     </div>
                     <div class="flex-1 w-full">
-                        <p v-if="form.errors.name" class="text-red-500/90 text-sm mb-0.5">{{form.errors.name}}</p>
+                        <p v-if="form.errors.name" class="errors">{{form.errors.name}}</p>
                         <input
                             type="text"
                             class="bg-white border border-gray-200 rounded px-3 py-1.5 text-sm text-gray-500 w-full"
@@ -77,18 +77,19 @@ const passSubmit = () => {
                             maxlength="20"
                             placeholder="..."
                         >
-                        <p class="text-right text-sm text-gray-500 py-0.5">Remaining {{20 - (form.name ?? '').length}} characters</p>
+                        <p class="rem py-0.5">Remaining {{20 - (form.name ?? '').length}} characters</p>
                     </div>
                 </div>
 
 
-                <div class="flex flex-col md:flex-row flex-wrap items-start py-3 sm:py-5 border-b border-gray-200">
-                    <div class="mr-3 w-full md:flex-1 mb-1.5">
-                        <div class="text-sm font-semibold text-gray-500">Company Logo<span class="text-red-500">*</span></div>
-                        <p class="text-gray-500/80 text-sm">Square size image with a 1:1 aspect ratio is recommended. Images are cropped to this size before upload.</p>
+
+                <div class="jform">
+                    <div class="con">
+                        <div class="title">Company Logo<span class="text-red-500">*</span></div>
+                        <p class="dscr">Square size image with a 1:1 aspect ratio is recommended. Images are cropped to this size before upload.</p>
                     </div>
                     <div class="flex-1 w-full">
-                        <p v-if="form.errors.logo" class="text-red-500/90 text-sm mb-0.5">{{form.errors.logo}}</p>
+                        <p v-if="form.errors.logo" class="errors">{{form.errors.logo}}</p>
                         
                         <div class="flex items-center mb-2">
                             <img :src="user.logo" v-if="user.logo" class="rounded-full w-12 h-12 mr-2">
@@ -106,13 +107,13 @@ const passSubmit = () => {
                 </div>
 
 
-                <div class="flex flex-col md:flex-row flex-wrap items-start py-3 sm:py-5 border-b border-gray-200" v-if="false">
-                    <div class="mr-3 w-full md:flex-1 mb-1.5">
-                        <div class="text-sm font-semibold text-gray-500">Company Email<span class="text-red-500">*</span></div>
-                        <p class="text-gray-500/80 text-sm">This the email address where interested candidates of job postings will send their CV/Resume.</p>
+                <div class="jform" v-if="false">
+                    <div class="con">
+                        <div class="title">Company Email<span class="text-red-500">*</span></div>
+                        <p class="dscr">This the email address where interested candidates of job postings will send their CV/Resume.</p>
                     </div>
                     <div class="flex-1 w-full">
-                        <p v-if="form.errors.email" class="text-red-500/90 text-sm mb-0.5">{{form.errors.email}}</p>
+                        <p v-if="form.errors.email" class="errors">{{form.errors.email}}</p>
                         <input
                             type="email"
                             class="bg-white border border-gray-200 rounded px-3 py-1.5 text-sm text-gray-500 w-full"
@@ -125,13 +126,13 @@ const passSubmit = () => {
 
 
 
-                <div class="flex flex-col md:flex-row flex-wrap items-start py-3 sm:py-5 border-b border-gray-200">
-                    <div class="mr-3 w-full md:flex-1 mb-1.5">
-                        <div class="text-sm font-semibold text-gray-500">Company Website<span class="text-red-500">*</span></div>
-                        <p class="text-gray-500/80 text-sm">Company website, social media link, or any link to where more info on company can be seen. Must be prefixed with https:// or http://</p>
+                <div class="jform">
+                    <div class="con">
+                        <div class="title">Company Website<span class="text-red-500">*</span></div>
+                        <p class="dscr">Company website, social media link, or any link to where more info on company can be seen. Must be prefixed with https:// or http://</p>
                     </div>
                     <div class="flex-1 w-full">
-                        <p v-if="form.errors.website" class="text-red-500/90 text-sm mb-0.5">{{form.errors.website}}</p>
+                        <p v-if="form.errors.website" class="errors">{{form.errors.website}}</p>
                         <input
                             type="text"
                             class="bg-white border border-gray-200 rounded px-3 py-1.5 text-sm text-gray-500 w-full"
@@ -141,6 +142,7 @@ const passSubmit = () => {
                         >
                     </div>
                 </div>
+                
                 
 
                 <div class="flex justify-between items-end mt-1">

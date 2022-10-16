@@ -3,7 +3,7 @@
 <h1 align="center">Remotech</h1>
 
 <h3 align="center">
-Remotech is a full job listing and search application that aims to give a fast and modern user experience for job employers and job seekers.
+Remotech is a comprehensive job listing and search application that provides a fast and modern user experience for both job employers and work searchers.
 </h3>
 
 
@@ -23,7 +23,7 @@ Made with
 <h3>
 <strong>Links</strong>
 
-<a href="http://remotech.us-east-1.elasticbeanstalk.com" target="_blank">See a working example of the app.</a>
+<a href="https://remotech.artisticlogicmk.one" target="_blank">View the app in action.</a>
 
 <a href="https://www.behance.net/gallery/152242029/Remotech-Job-Search-Web-App" target="_blank">Check out more screenshots on behance.</a>
 </h3>
@@ -52,6 +52,6 @@ npm run watch //build on watch for dev
 npm run hot //Compiles and hot-reloads for dev
 npm run prod //Compiles frontend for production
 ```
-> Rename .env.example to .env and set your own database info. Sqlite is used as the default database which has some preloaded data.
+> Rename .env.example to .env and set your own database info. Sqlite is used as the default database which comes with some preloaded data.
 
 Feel free to fork and contribute to this repository.

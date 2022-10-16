@@ -145,13 +145,14 @@ onMounted(() => {
                     <p class="text-sm text-gray-500/90">The fields <span class="text-red-500">*</span> are required</p>
                 </div>
 
-                <div class="flex flex-col md:flex-row flex-wrap items-start py-3 sm:py-5 border-b border-gray-200">
-                    <div class="mr-3 w-full md:flex-1 mb-1">
-                        <div class="text-sm font-semibold text-gray-500">Job Title<span class="text-red-500">*</span></div>
-                        <p class="text-gray-500/80 text-sm">Be specific. indicate the job position needed.</p>
+
+                <div class="jform">
+                    <div class="con">
+                        <div class="title">Job Title<span class="text-red-500">*</span></div>
+                        <p class="dscr">Be specific. indicate the job position needed.</p>
                     </div>
                     <div class="flex-1 w-full">
-                        <p v-if="errors.title" class="text-red-500/90 text-sm mb-0.5">{{errors.title}}</p>
+                        <p v-if="errors.title" class="errors">{{errors.title}}</p>
                         <input
                             type="text"
                             class="bg-white border border-gray-200 rounded px-3 py-1.5 text-sm text-gray-500 w-full"
@@ -160,17 +161,19 @@ onMounted(() => {
                             maxlength="35"
                             placeholder="Frontend Engineer"
                         >
-                        <p class="text-right text-sm text-gray-500 py-0.5">Remaining {{35 - (form.title ?? '').length}} characters</p>
+                        <p class="rem py-0.5">Remaining {{35 - (form.title ?? '').length}} characters</p>
                     </div>
                 </div>
 
-                <div class="flex flex-col md:flex-row flex-wrap items-start py-3 sm:py-5 border-b border-gray-200">
-                    <div class="mr-3 w-full md:flex-1 mb-1.5">
-                        <div class="text-sm font-semibold text-gray-500">Job Description<span class="text-red-500">*</span></div>
-                        <p class="text-gray-500/80 text-sm">Information about the job. Write clearly what the job is about. Whitespaces allowed.</p>
+
+
+                <div class="jform">
+                    <div class="con">
+                        <div class="title">Job Description<span class="text-red-500">*</span></div>
+                        <p class="dscr">Information about the job. Write clearly what the job is about. Whitespaces allowed.</p>
                     </div>
                     <div class="flex-1 w-full">
-                        <p v-if="errors.description" class="text-red-500/90 text-sm mb-0.5">{{errors.description}}</p>
+                        <p v-if="errors.description" class="errors">{{errors.description}}</p>
                         <textarea
                             class="bg-white border border-gray-200 rounded px-3 py-1 text-sm text-gray-500 w-full"
                             :class="{'border-red-300': errors.description}"
@@ -180,14 +183,16 @@ onMounted(() => {
                             rows="6"
                         >
                         </textarea>
-                        <p class="text-right text-sm text-gray-500 py-0">Remaining {{1000 - (form.description ?? '').length}} characters</p>
+                        <p class="rem py-0">Remaining {{1000 - (form.description ?? '').length}} characters</p>
                     </div>
                 </div>
 
-                <div class="flex flex-col md:flex-row flex-wrap items-start py-3 sm:py-5 border-b border-gray-200">
-                    <div class="mr-3 w-full md:flex-1 mb-2.5">
-                        <div class="text-sm font-semibold text-gray-500">Job Type<span class="text-red-500">*</span></div>
-                        <p class="text-gray-500/80 text-sm">Describes the nature of the job.</p>
+
+
+                <div class="jform">
+                    <div class="con">
+                        <div class="title">Job Type<span class="text-red-500">*</span></div>
+                        <p class="dscr">Describes the nature of the job.</p>
                     </div>
                     <div class="flex-1 w-full">
                         <p v-if="errors.type" class="text-red-500/90 text-sm mb-0.5">{{errors.type}}</p>
@@ -214,13 +219,15 @@ onMounted(() => {
                     </div>
                 </div>
 
-                <div class="flex flex-col md:flex-row flex-wrap items-start py-3 sm:py-5 border-b border-gray-200">
-                    <div class="mr-3 w-full md:flex-1 mb-1.5">
-                        <div class="text-sm font-semibold text-gray-500">Skills Needed<span class="text-red-500">*</span></div>
-                        <p class="text-gray-500/80 text-sm">Please select 1-6 skills that the job requires. You can add new skills not in our database.</p>
+
+
+                <div class="jform">
+                    <div class="con">
+                        <div class="title">Skills Needed<span class="text-red-500">*</span></div>
+                        <p class="dscr">Please select 1-6 skills that the job requires. You can add new skills not in our database.</p>
                     </div>
                     <div class="flex-1 w-full">
-                        <p v-if="errors.skills && !skills.length" class="text-red-500/90 text-sm mb-0.5">{{errors.skills}}</p>
+                        <p v-if="errors.skills && !skills.length" class="errors">{{errors.skills}}</p>
                         <div class="flex">
                             <div
                                 class="bg-white border border-gray-200 rounded pl-3 py-0 grow flex items-center mr-1 relative"
@@ -244,7 +251,7 @@ onMounted(() => {
                                 <i class="la la-plus text-white text-3jxl"></i>
                             </button>
                         </div>
-                        <p class="text-right text-sm text-gray-500 py-0.5 mr-10">Remaining {{6 - (skills ?? '').length}} skills</p>
+                        <p class="rem py-0.5 mr-10">Remaining {{6 - (skills ?? '').length}} skills</p>
 
                         <div class="mt-1">
                             <div
@@ -263,13 +270,13 @@ onMounted(() => {
 
 
 
-                <div class="flex flex-col md:flex-row flex-wrap items-start py-3 sm:py-5 border-b border-gray-200">
-                    <div class="mr-3 w-full md:flex-1 mb-1.5">
-                        <div class="text-sm font-semibold text-gray-500">Job Qualifications</div>
-                        <p class="text-gray-500/80 text-sm">Whitespaces or paragraphs are allowed.</p>
+                <div class="jform">
+                    <div class="con">
+                        <div class="title">Job Qualifications</div>
+                        <p class="dscr">Whitespaces or paragraphs are allowed.</p>
                     </div>
                     <div class="flex-1 w-full">
-                        <p v-if="errors.qualifications" class="text-red-500/90 text-sm mb-0.5">{{errors.qualifications}}</p>
+                        <p v-if="errors.qualifications" class="errors">{{errors.qualifications}}</p>
                         <textarea
                             class="bg-white border border-gray-200 rounded px-3 py-1 text-sm text-gray-500 w-full"
                             :class="{'border-red-300': errors.qualifications}"
@@ -279,20 +286,20 @@ onMounted(() => {
                             rows="6"
                         >
                         </textarea>
-                        <p class="text-right text-sm text-gray-500 py-0">Remaining {{600 - (form.qualifications ?? '').length}} characters</p>
+                        <p class="rem py-0">Remaining {{600 - (form.qualifications ?? '').length}} characters</p>
                     </div>
                 </div>
 
 
 
 
-                <div class="flex flex-col md:flex-row flex-wrap items-start py-3 sm:py-5 border-b border-gray-200">
-                    <div class="mr-3 w-full md:flex-1 mb-1.5">
-                        <div class="text-sm font-semibold text-gray-500">Job Salary</div>
-                        <p class="text-gray-500/80 text-sm">Amount to be payed for the job. You can stipulate the time interval.</p>
+                <div class="jform">
+                    <div class="con">
+                        <div class="title">Job Salary</div>
+                        <p class="dscr">Amount to be payed for the job. You can stipulate the time interval.</p>
                     </div>
                     <div class="flex-1 w-full">
-                        <p v-if="errors.salary_interval" class="text-red-500/90 text-sm mb-0.5">{{errors.salary_interval}}</p>
+                        <p v-if="errors.salary_interval" class="errors">{{errors.salary_interval}}</p>
                         <div class="flex text-sm text-gray-500">
                             <input type="number" class="grow bg-white border border-gray-200 rounded px-3 py-1 mr-2" v-model="salary" placeholder="000">
                             <select class="bg-white border border-gray-200 rounded px-3 py-1" :class="{'border-red-300': errors.salary_interval}" v-model="interval">
@@ -307,13 +314,15 @@ onMounted(() => {
                     </div>
                 </div>
 
-                <div class="flex flex-col md:flex-row flex-wrap items-start py-3 sm:py-5 pb-10 border-b border-gray-200">
-                    <div class="mr-3 w-full md:flex-1 mb-1.5">
-                        <div class="text-sm font-semibold text-gray-500">Job active till<span class="text-red-500">*</span></div>
-                        <p class="text-gray-500/80 text-sm">This job will be hidden from public view when the chosen date is reached. The date must be later than today.</p>
+
+
+                <div class="jform">
+                    <div class="con">
+                        <div class="title">Job active till<span class="text-red-500">*</span></div>
+                        <p class="dscr">This job will be hidden from public view when the chosen date is reached. The date must be later than today.</p>
                     </div>
                     <div class="flex-1 w-full">
-                        <p v-if="errors.close_date" class="inline-block text-red-500/90 text-sm mb-0.5">{{errors.close_date}}</p>&nbsp;
+                        <p v-if="errors.close_date" class="errors">{{errors.close_date}}</p>&nbsp;
                         <p v-if="dateError" class="inline-block text-red-500/90 text-sm mb-0.5">Pick a date greater than today.</p>
                         <input
                             type="date"
