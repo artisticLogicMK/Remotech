@@ -58,7 +58,7 @@ const sub = useForm({
             </a>
           </div>
 
-          <div class="text-sm text-white text-center underline pt-2 hidden">
+          <div class="text-sm text-white text-center underline pt-2">
             <a href="https://artisticlogicmk.one" target="_blank" class="mr-2.5">
               <i class="la la-globe"></i> ArtisticLogicMK
             </a>
