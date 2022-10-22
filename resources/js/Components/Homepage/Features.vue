@@ -1,12 +1,3 @@
-<script setup>
-import AOS from 'aos'
-import { onMounted } from 'vue'
-
-onMounted(() => {
-  AOS.init()
-})
-</script>
-
 <template>
   <div class="w-full bg-gradient-to-br from-sky-400 to-teal-400 px-3 py-10 relative overflow-hidden">
     <div class="absolute top-0 left-0 w-full h-full bg-transparent text-center">

@@ -3,6 +3,8 @@
 /public/storage
 /storage/*.key
 /vendor
+.vercelignore
+vercel.json
 .env
 .env.backup
 .phpunit.result.cache

@@ -23,7 +23,7 @@ Made with
 <h3>
 <strong>Links</strong>
 
-<a href="https://remotech.artisticlogicmk.one" target="_blank">View the app in action.</a>
+<a href="http://remotech.us-east-1.elasticbeanstalk.com/" target="_blank">View the app in action.</a>
 
 <a href="https://www.behance.net/gallery/152242029/Remotech-Job-Search-Web-App" target="_blank">Check out more screenshots on behance.</a>
 </h3>

@@ -1,7 +1,5 @@
 <script setup>
 import { useForm } from '@inertiajs/inertia-vue3'
-import AOS from 'aos'
-import { onMounted } from 'vue'
 
 defineProps({
   errors: Object
@@ -9,10 +7,6 @@ defineProps({
 
 const sub = useForm({
   email: ''
-})
-
-onMounted(() => {
-  AOS.init()
 })
 </script>
 
@@ -44,23 +38,32 @@ onMounted(() => {
         <div class="text-base text-red-400 text-center mt-8 sm:mt-3" :class="{'text-green-400': $page.props.errors.sent}" v-if="$page.props.errors">{{$page.props.errors.email ?? $page.props.errors.sent}}</div>
         
         <div class="pt-8 pb-2 text-center" data-aos="fade-up" data-aos-delay="250">
-          <div class="text-4xl font-semibold text-white/95 mb-4"><i class="la la-wifi text-4xl"></i>Remotech</div>
+          <div class="text-4xl font-semibold text-white/95 mb-3"><i class="la la-wifi text-4xl"></i>Remotech</div>
           
-          <div class="text-white/95 text-base inline-block mb-4">
+          <div class="text-white/95 text-base inline-block mb-3">
             <Link :href="route('dashboard')" class="mx-2 hover:underline">Find Jobs</Link>
             <Link :href="route('login')" class="mx-2 hover:underline" v-if="!$page.props.auth.user">Login</Link>
             <Link :href="route('register')" class="mx-2 hover:underline" v-if="!$page.props.auth.user">Sign Up</Link>            
           </div>
           
           <div class="text-white/95 text-xl">
-            <a class="border border-white/95 w-8 h-8 rounded-full inline-block mx-2 pt-0.5 hover:bg-white/20">
+            <a class="border border-white/95 w-8 h-8 rounded-full inline-block mx-2 pt-0.5 hover:bg-white/20 cursor-pointer">
               <i class="la la-twitter inline-block"></i>
             </a>
-            <a class="border border-white/95 w-8 h-8 rounded-full inline-block mx-2 pt-0.5 hover:bg-white/20">
+            <a class="border border-white/95 w-8 h-8 rounded-full inline-block mx-2 pt-0.5 hover:bg-white/20 cursor-pointer">
               <i class="la la-facebook inline-block"></i>
             </a>
-            <a class="border border-white/95 w-8 h-8 rounded-full inline-block mx-2 pt-0.5 hover:bg-white/20">
+            <a class="border border-white/95 w-8 h-8 rounded-full inline-block mx-2 pt-0.5 hover:bg-white/20 cursor-pointer">
               <i class="la la-linkedin inline-block"></i>
+            </a>
+          </div>
+
+          <div class="text-sm text-white text-center underline pt-2 hidden">
+            <a href="https://artisticlogicmk.one" target="_blank" class="mr-2.5">
+              <i class="la la-globe"></i> ArtisticLogicMK
+            </a>
+            <a href="https://github.com/artisticLogicMK/Remotech" target="_blank">
+              <i class="la la-github"></i> See code at Github 
             </a>
           </div>
         </div>

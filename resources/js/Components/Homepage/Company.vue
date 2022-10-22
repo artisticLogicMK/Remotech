@@ -1,12 +1,3 @@
-<script setup>
-import AOS from 'aos'
-import { onMounted } from 'vue'
-
-onMounted(() => {
-  AOS.init()
-})
-</script>
-
 <template>
   <div class="p-7">
     <div class="max-w-xl mx-auto text-center px-3 pb-10 sm:pb-7">

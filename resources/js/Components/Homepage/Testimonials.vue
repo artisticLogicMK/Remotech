@@ -1,6 +1,5 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import AOS from 'aos'
 
 //Note: testiminials text copied from the internet
 const testimos = ref([
@@ -10,10 +9,6 @@ const testimos = ref([
 ])
 
 const selected = ref(testimos.value[1])
-
-onMounted(() => {
-  AOS.init({})
-})
 </script>
 
 <template>
