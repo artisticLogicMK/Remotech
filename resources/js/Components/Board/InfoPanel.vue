@@ -13,7 +13,6 @@ const time = (time) => {
 </script>
 
 <template>
-<!--if infoPanelOverlap == true? '' : hidden lg:block-->
   <div
     class="bg-white w-full lg:w-[330px] xl:w-[400px] 2xl:w-3/12"
     :class="$store.state.infoPanelOverlap ? '' : 'hidden lg:block'"

@@ -76,7 +76,7 @@ const submit = () => {
 
         <div class="mb-3 md:mb-2.5">
           <input type="checkbox" id="rem" class="peer hidden" v-model="form.remember">
-          <label for="rem" class="inline-flex items-center text-gray-400/90 peer-checked:text-sky-500 active:scale-[1.15]">
+          <label for="rem" class="inline-flex items-center text-gray-400/90 peer-checked:text-sky-500 active:scale-[1.15] cursor-pointer">
             <i class="la la-check-circle text-2xl sm:text-2xl mr-1 duration-[0s]"></i>
             <span class="text-gray-500 text-sm">Remember me</span>
           </label>
