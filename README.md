@@ -52,4 +52,4 @@ npm run watch //build on watch for dev
 npm run hot //Compiles and hot-reloads for dev
 npm run prod //Compiles frontend for production
 ```
-> Rename .env.example to .env and set your own database info. Sqlite is used as the default database which comes with some preloaded data.
+> Rename .env.example to .env and set your own database info. Sqlite is used as the default database which comes with some preloaded data. 
